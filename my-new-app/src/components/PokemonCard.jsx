@@ -9,8 +9,9 @@ const pokemonList = [
     },
 ];
 
-function PokemonCard() {
-    const pokemon = pokemonList[0];
+function PokemonCard(props) {
+    console.log(props)
+    const pokemon = props.pokemon;
     return (
         <figure>
             {pokemon.imgSrc ? <img src={pokemon.imgSrc} alt={pokemon.name} /> : <p>???</p>}
