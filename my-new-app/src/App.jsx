@@ -11,7 +11,7 @@ function App() {
   PokemonCard.propTypes = {
     pokemon: PropTypes.shape({
       name: PropTypes.string.isRequired,
-      imgSrc: PropTypes.string.isRequired,
+      imgSrc: PropTypes.string
     }).isRequired,
   }
 
