@@ -3,11 +3,18 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import PokemonCard from './components/PokemonCard'
-
+import PropTypes from "prop-types";
 
 
 function App() {
-  const [count, setCount] = useState(0);
+
+  PokemonCard.propTypes = {
+    pokemon: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      imgSrc: PropTypes.string.isRequired,
+    }).isRequired,
+  }
+
   const pokemonList = [
     {
       name: "bulbasaur",
