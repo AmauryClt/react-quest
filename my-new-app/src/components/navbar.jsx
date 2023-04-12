@@ -1,11 +1,11 @@
 
 
-function NavBar({ nextPokemon, previousPokemon }) {
+function NavBar({ next, previous }) {
 
     return (
         <div>
-            <button onClick={previousPokemon}>Previous</button>
-            <button onClick={nextPokemon}>Next</button>
+            <button onClick={previous}>Previous</button>
+            <button onClick={next}>Next</button>
         </div>
     )
 }
