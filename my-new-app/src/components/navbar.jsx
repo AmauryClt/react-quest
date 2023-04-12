@@ -1,23 +1,21 @@
 
 
-
-
-function navBar(props) {
-
-    const nextPokemon = () => {
-        setPokemonIndex(ancienIndex => ancienIndex + 1);
-    }
-    const previousPokemon = () => {
-        setPokemonIndex(ancienIndex => ancienIndex - 1);
-    }
+function NavBar({ nextPokemon, previousPokemon }) {
 
     return (
         <div>
-            <button onClick={previousPokemon} disabled={pokemonIndex === 0}>Précédent</button>
-            <button onClick={nextPokemon} disabled={pokemonIndex === pokemonList.length - 1}>Suivant</button>
+            <button onClick={previousPokemon}>Previous</button>
+            <button onClick={nextPokemon}>Next</button>
         </div>
     )
 }
 
-export default navBar;
+export default NavBar;
 
+
+
+
+
+// disabled={pokemonIndex === pokemonList.length - 1}
+
+// disabled={pokemonIndex === 0}
