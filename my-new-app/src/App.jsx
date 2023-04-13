@@ -40,6 +40,13 @@ function App() {
     },
   ];
 
+  useEffect(
+    () => {
+      alert("hello pokemon trainer :)")
+    },
+    []
+  );
+
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
   const nextPokemon = () => {
@@ -55,9 +62,6 @@ function App() {
 
   const pokemon = pokemonList[pokemonIndex];
 
-  useEffect(() => {
-    alert("hello pokemon trainer :)")
-  }, [])
 
   return (
     <div>
