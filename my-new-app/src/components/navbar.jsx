@@ -1,6 +1,10 @@
+function NavBar({ next, previous, pokemon }) {
 
-
-function NavBar({ next, previous }) {
+    useEffect(() => {
+        if (pokemon.name === "pikachu") {
+            alert("pika pikachu !!!")
+        }
+    }, [pokemon])
 
     return (
         <div>
@@ -11,11 +15,3 @@ function NavBar({ next, previous }) {
 }
 
 export default NavBar;
-
-
-
-
-
-// disabled={pokemonIndex === pokemonList.length - 1}
-
-// disabled={pokemonIndex === 0}

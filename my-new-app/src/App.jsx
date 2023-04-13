@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import PokemonCard from './components/PokemonCard'
 import PropTypes from "prop-types";
@@ -40,8 +40,6 @@ function App() {
     },
   ];
 
-
-
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
   const nextPokemon = () => {
@@ -50,7 +48,6 @@ function App() {
     }
   }
 
-
   const previousPokemon = () => {
     if (pokemonIndex > 0)
       setPokemonIndex(ancienIndex => ancienIndex - 1);
@@ -58,12 +55,14 @@ function App() {
 
   const pokemon = pokemonList[pokemonIndex];
 
+  useEffect(() => {
+    alert("hello pokemon trainer :)")
+  }, [])
+
   return (
     <div>
-
       <PokemonCard pokemon={pokemon} />
       <Navbar next={nextPokemon} previous={previousPokemon} />
-
     </div>
   );
 }
