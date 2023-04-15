@@ -44,7 +44,7 @@ function App() {
   return (
     <div>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      <Navbar setPokemonIndex={setPokemonIndex} pokemonList={ } />
+      <Navbar setPokemonIndex={setPokemonIndex} pokemonList={pokemonList} />
     </div>
   );
 }

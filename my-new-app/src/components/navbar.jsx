@@ -4,7 +4,12 @@ function NavBar({ setPokemonIndex, pokemonList }) {
     const handleClickPokemon = index => setPokemonIndex(index)
 
     return pokemonList.map(
-        (pokemon, index) => <button key={index} onClick={() => handleClickPokemon(index)}>{pokemon.name}</button>
+        (pokemon, index) => <button key={index} onClick={() => {
+            if (pokemon.name === "pikachu") {
+                alert("pika pikachu !!!")
+            }
+            handleClickPokemon(index)
+        }}>{pokemon.name}</button>
     )
 }
 
