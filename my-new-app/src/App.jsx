@@ -47,6 +47,7 @@ function App() {
     []
   );
 
+
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
   const nextPokemon = () => {
