@@ -1,24 +1,21 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types"
 
-function NavBar({ next, previous, currentPokemon }) {
-    NavBar.propTypes = {
-        next: PropTypes.func.isRequired,
-        previous: PropTypes.func.isRequired,
-        currentPokemon: PropTypes.string.isRequired,
-    };
+function NavBar({ setPokemonIndex, pokemonList }) {
+    const handleClickPokemon = index => setPokemonIndex(index)
 
-    useEffect(() => {
-        if (currentPokemon === 'pikachu') {
-            alert('pika pikachu !!!');
-        }
-    }, [currentPokemon]);
-
-    return (
-        <div>
-            <button onClick={previous}>Previous</button>
-            <button onClick={next}>Next</button>
-        </div>
-    );
+    return pokemonList.map(
+        (pokemon, index) => <button key={index} onClick={() => handleClickPokemon(index)}>{pokemon.name}</button>
+    )
 }
+
+NavBar.propTypes = {
+    setPokemonIndex: PropTypes.func.isRequired,
+    pokemonList: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            imgSrc: PropTypes.string,
+        })
+    ).isRequired,
+};
 
 export default NavBar;
